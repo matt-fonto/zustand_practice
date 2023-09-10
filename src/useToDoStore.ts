@@ -24,10 +24,8 @@ const createStore = (set) => ({
   draggedTask: "",
 
   addTask: (title, status) =>
-    // set because we want to manipulate the store
     set(
       (state) => ({
-        // take all the current tasks and add the new one
         tasks: [...state.tasks, { title, status }]
       }),
       false,
