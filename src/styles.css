@@ -1,0 +1,178 @@
+:root {
+  --COLOR-GRAY: #333333;
+  --COLOR-GRAY-DARK: #222222;
+  --COLOR-GRAY-LIGHT: #cccccc;
+  --COLOR-DOING: #98c1d9;
+  --COLOR-DONE: #ee6c4d;
+  --FONT-COLOR: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  background: var(--COLOR-GRAY);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column {
+  background: var(--COLOR-GRAY-DARK);
+  min-height: 20rem;
+  color: var(--FONT-COLOR);
+  width: 33%;
+  margin: 0.5rem;
+  padding: 1rem;
+  border-radius: 5px;
+  border: dashed transparent 1px;
+}
+
+.dropping-area {
+  border-color: white;
+}
+
+.task {
+  background: white;
+  border-radius: 5px;
+  color: var(--COLOR-GRAY);
+  padding: 0.5rem;
+  min-height: 2rem;
+  width: max;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 2px 0;
+  cursor: move;
+}
+
+.bottomWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.status-container {
+  font-size: small;
+  color: white;
+  padding: 0.25rem;
+  border-radius: 5px;
+}
+
+.toDo {
+  background-color: var(--COLOR-GRAY-LIGHT);
+}
+
+.doing {
+  background-color: var(--COLOR-DOING);
+}
+
+.done {
+  background-color: var(--COLOR-DONE);
+}
+
+.column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.column-header button {
+  all: unset;
+  height: 30px;
+  width: 60px;
+  text-align: center;
+  background: white;
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+}
+
+.column-header button:hover {
+  background-color: var(--COLOR-DONE);
+  transition: 0.4s;
+}
+
+/* Overlay covering the entire screen */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Black with 70% opacity */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal container */
+.modal {
+  width: 80%;
+  max-width: 500px; /* You can adjust this value */
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  animation: fadeIn 0.3s;
+}
+
+.input-modal,
+.select-modal,
+.btn-modal {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: 0.3s;
+  transform: 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.input-modal:placeholder {
+  color: #aaa;
+}
+
+.select-modal {
+  appearance: none;
+  cursor: pointer;
+}
+
+.btn-modal {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-modal:hover {
+  background-color: #0056b3;
+  transition: 0.3s;
+}
+
+.btn-modal:active {
+  background-color: #004499;
+  transform: scale(0.98);
+}
+
+/* Close button for the modal */
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #aaa;
+}
+
+.close-btn:hover {
+  color: #fff;
+}
